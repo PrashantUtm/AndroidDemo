@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView counterTextView;
     Button incrementButton;
     Button navigateButton;
+    ImageButton navigateToLocationImageButton;
 
     private int counter = 0;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         counterTextView = findViewById(R.id.textViewCounter);
         incrementButton = findViewById(R.id.buttonIncrement);
         navigateButton = findViewById(R.id.buttonNavigate);
+        navigateToLocationImageButton = findViewById(R.id.imageButtonLocation);
 
         incrementButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +42,11 @@ public class MainActivity extends AppCompatActivity {
         navigateButton.setOnClickListener(view -> {
             Intent navigateIntent = new Intent(MainActivity.this, SecondActivity.class);
             navigateIntent.putExtra("counter", counter);
+            startActivity(navigateIntent);
+        });
+
+        navigateToLocationImageButton.setOnClickListener(view -> {
+            Intent navigateIntent = new Intent(MainActivity.this, LocationActivity.class);
             startActivity(navigateIntent);
         });
     }
