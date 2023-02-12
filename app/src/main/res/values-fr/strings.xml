@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de demo</string>
+    <string name="first_name">Prenom</string>
+    <string name="last_name">Surnom</string>
+    <string name="display_full_name">Afficher le nom complet</string>
+</resources>

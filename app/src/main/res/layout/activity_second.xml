@@ -13,7 +13,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
-        android:hint="First name"
+        android:hint="@string/first_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
         android:ems="10"
-        android:hint="Last name"
+        android:hint="@string/last_name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:id="@+id/buttonDisplayFullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display full name"
+        android:text="@string/display_full_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -59,4 +59,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonDisplayFullName" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="170dp"
+        android:layout_height="189dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textViewFullName"
+        app:srcCompat="@drawable/thumb" />
 </androidx.constraintlayout.widget.ConstraintLayout>
