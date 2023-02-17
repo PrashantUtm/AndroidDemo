@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     TextView counterTextView;
     Button incrementButton;
     Button navigateButton;
+    Button createServiceRequestButton;
     ImageButton navigateToLocationImageButton;
 
     private int counter = 0;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         counterTextView = findViewById(R.id.textViewCounter);
         incrementButton = findViewById(R.id.buttonIncrement);
         navigateButton = findViewById(R.id.buttonNavigate);
+        createServiceRequestButton = findViewById(R.id.buttonCreateServiceRequest);
         navigateToLocationImageButton = findViewById(R.id.imageButtonLocation);
 
         incrementButton.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +49,11 @@ public class MainActivity extends AppCompatActivity {
 
         navigateToLocationImageButton.setOnClickListener(view -> {
             Intent navigateIntent = new Intent(MainActivity.this, LocationActivity.class);
+            startActivity(navigateIntent);
+        });
+
+        createServiceRequestButton.setOnClickListener(view -> {
+            Intent navigateIntent = new Intent(MainActivity.this, CreateServiceRequest.class);
             startActivity(navigateIntent);
         });
     }
