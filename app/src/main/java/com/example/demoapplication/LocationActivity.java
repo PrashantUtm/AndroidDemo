@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
@@ -13,6 +14,8 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.demoapplication.helpers.Constants;
 
 public class LocationActivity extends AppCompatActivity {
 
@@ -108,10 +111,20 @@ public class LocationActivity extends AppCompatActivity {
         }
 
         setLocationValues();
+        saveLocationToSharedPreferences();
     }
 
     private void setLocationValues() {
         latitudeValueTextView.setText(Double.toString(latitude));
         longitudeValueTextView.setText(Double.toString(longitude));
+    }
+
+    private void saveLocationToSharedPreferences() {
+        SharedPreferences sharedPreferences = getApplicationContext().getSharedPreferences(
+                Constants.PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(Constants.LATITUDE_KEY, Double.toString(latitude));
+        editor.putString(Constants.LONGITUDE_KEY, Double.toString(longitude));
+        editor.apply();
     }
 }

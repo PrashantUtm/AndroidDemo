@@ -47,7 +47,8 @@ public class SuccessActivity extends AppCompatActivity {
         });
 
         navigateHomeButton.setOnClickListener(view -> {
-            Toast.makeText(this, "Not implemented", Toast.LENGTH_SHORT).show();
+            Intent navigateToServiceRequests = new Intent(SuccessActivity.this, ServiceRequestList.class);
+            startActivity(navigateToServiceRequests);
         });
     }
 }

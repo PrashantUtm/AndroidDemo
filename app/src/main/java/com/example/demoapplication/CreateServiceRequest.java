@@ -17,7 +17,13 @@ import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.example.demoapplication.helpers.ServiceRequestDatabaseHelper;
+import com.example.demoapplication.models.ServiceRequest;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class CreateServiceRequest extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -74,6 +80,18 @@ public class CreateServiceRequest extends AppCompatActivity implements AdapterVi
             requiredFieldsToast.show();
             return;
         }
+
+//        String date = "22/02/2023";
+//        String time = "22:02";
+//        DateTimeFormatter df =  DateTimeFormatter.ofPattern("dd/MM/yyyy");
+//        DateTimeFormatter tf =  DateTimeFormatter.ofPattern("hh:mm");
+//        LocalDate localDate = LocalDate.parse(date, df);
+//        LocalTime localTime = LocalTime.parse(time, tf);
+//        LocalDateTime dateTime = LocalDateTime.of(localDate, localTime);
+
+        ServiceRequestDatabaseHelper dbHelper = new ServiceRequestDatabaseHelper(this);
+        ServiceRequest newServiceRequest = new ServiceRequest(title, description, selectedCategory, issueDateTime);
+        dbHelper.addServiceRequest(newServiceRequest);
 
         Intent successNavigateIntent = new Intent(CreateServiceRequest.this, SuccessActivity.class);
         successNavigateIntent.putExtra("category", selectedCategory);

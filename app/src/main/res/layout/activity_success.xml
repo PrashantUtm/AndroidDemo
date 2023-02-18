@@ -51,7 +51,7 @@
         style="@style/Widget.AppCompat.Button.ButtonBar.AlertDialog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to home"
+        android:text="Go to service requests"
         android:textColor="#673AB7"
         app:cornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"

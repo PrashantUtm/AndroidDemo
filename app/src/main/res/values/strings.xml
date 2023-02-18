@@ -4,6 +4,8 @@
     <string name="last_name">Last name</string>
     <string name="display_full_name">Display full name</string>
     <string name="success_message">Your service request for the issue that occured on %s at %s was successfully logged and has been assigned to the %s team. In the meantime you may visit our FAQ or go back to the home page.</string>
+    <string name="unknown_location_text">Your last known location could not be found.</string>
+    <string name="known_location_text">Your last known location was at latitude %s and longitude %s.</string>
     <string-array name="categories_array">
         <item>Other</item>
         <item>Workplace</item>
